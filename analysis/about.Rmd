@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "Acerca de"
 output:
   workflowr::wflow_html:
     toc: false
@@ -7,4 +7,6 @@ editor_options:
   chunk_output_type: console
 ---
 
-Describe your project.
+Capacitación interna de la Dirección de Estudios Sociales UC.
+
+22 de enero de 2021.

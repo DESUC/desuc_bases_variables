@@ -1,13 +1,13 @@
-name: "myproject"
+name: "DESUC: Lectura y manejo de bases de datos"
 output_dir: ../docs
 navbar:
-  title: "myproject"
+  title: "DESUC: Lectura y manejo de bases de datos"
   left:
-  - text: Home
+  - text: Principal
     href: index.html
-  - text: About
+  - text: Acerca de
     href: about.html
-  - text: License
+  - text: Licencia
     href: license.html
 output:
   workflowr::wflow_html:
