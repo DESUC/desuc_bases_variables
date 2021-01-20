@@ -11,133 +11,104 @@ sort(df_data$ano)
 # Empalme de variables
 df_var_long <- read_excel('data/02-df_var_long_revisado.xlsx')
 
+# bases de datos presentes en nuestro diccionario
+head(df_var_long)
 
-sort(df_var_wide$empresa_file)
-
-tipo_base <- df_var_wide %>%
-  pull(tipo, name = empresa_file)
 
 # Caso base ----
 
 label_vector <- function(.df,
-                         empresa_filter = FALSE){
+                         var_select = NULL){
+
   # Función que crea vector para cambio de nombre según variables.
   df_labels <- .df %>%
-    filter(empresa_file == empresa_filter) %>%
-    select(X1:last_col()) %>%
-    t() %>%
-    as_tibble(rownames = 'preg')
+    select(base, {{ var_select }}) %>%
+    na.omit()
 
   # Excluir variables NA.
   if(ncol(df_labels) == 2){
     df_labels %>%
-      filter(!is.na(V1)) %>%
-      pull(V1, name = preg)
+      filter(!is.na(base)) %>%
+      pull({{ var_select }}, name = base)
   } else {
     tibble(preg = NA_character_)
   }
 }
 
-label_vector(df_var_wide, 'BASE MODELO') %>%
+label_vector(df_var_long, bicentenario_2018.csv) %>%
   head()
 
-# Empresas que caen bajo BASE MODELO
-df_data$empresa_file[!(df_data$empresa_file %in% df_var_wide$empresa_file)]
+# Nombres de base de diccionario de etiquetas.
+names_df_var_long <- names(df_var_long)
 
-# Empresas particulares
-df_data$empresa_file[df_data$empresa_file %in% df_var_wide$empresa_file]
+# Bases que caen bajo Caso general
+df_data$archivo[!(df_data$archivo %in% names_df_var_long)]
 
-# Agregar dato de filtro
+# Bases que caen en casos particulares
+df_data$archivo[df_data$archivo %in% names_df_var_long]
+
+# Agregar dato de tipo_var para cada base
 df_data <- df_data %>%
-  mutate(filtro = if_else(!(empresa_file %in% df_var_wide$empresa_file),
-                          'BASE MODELO',
-                          empresa_file),
-         tipo = if_else(!(empresa_file %in% df_var_wide$empresa_file),
-                        'base',
-                        tipo_base[empresa_file]),
-         .after = empresa_file)
+  mutate(var_codes = if_else(!(archivo %in% names_df_var_long),
+                             'caso_general',
+                             archivo),
+         .after = archivo)
 
-table(df_data$tipo)
 
 # Agregar vector de nombres
-
 df_data <- df_data %>%
   rowwise() %>%
-  dplyr::mutate(var_rename = list(label_vector(df_var_wide,
-                                               empresa_filter = filtro)))
-# Revisión de empresa repetida.
-# df_var_wide %>%
-#   filter(empresa_file == 'CCU (papel)')
-#
-# label_vector(df_var_wide,
-#              empresa_filter == 'CCU (papel)')
-#
-# df_data$var_rename[[4]]
+  dplyr::mutate(var_rename = list(label_vector(df_var_long,
+                                               var_select = all_of(var_codes))))
 
+
+# Hago el cambio de nombre gracias al vector nominado agregado en la etapa anterior.
 df_data <- df_data %>%
   mutate(data = list(rename(data, any_of(var_rename))))
 
+df_data$data[[1]] %>%
+  head()
+
+
 # Base conjunta con respuestas múltiples por variable
 
-var_strings <- c('empresa_file', 'filtro', 'tipo', 'archivo',
-                 'P05_A_ABIERTA',
-                 'P11_ABIERTA',
-                 'P23_A_ABIERTA',
-                 'P24_1_A_ABIERTA',
-                 'P25_A_ABIERTA',
-                 'P26_ABIERTA',
-                 'NOMBRE', 'EMPRESA', 'CORREO', 'FECHA', 'IP',
-                 'AGENT')
-
 df_multiple_unnest <- df_data %>%
-  filter(tipo %in% c('base', 'múltiples')) %>%
-  select(empresa_file:data) %>%
+  select(archivo:data) %>%
   unnest(data) %>%
-  type.convert() %>%
-  mutate(across(c(any_of(var_strings),
-                  starts_with('CAMPO')),
-                as.character))
+  type.convert(as.is = TRUE)
+
+
+df_multiple_unnest %>%
+  head()
+
+df_multiple_unnest %>%
+  count(ano)
+
+
+# Ajustar variables
+df_multiple_unnest %>%
+  count(sexo)
+
+cambio_var <- c(Hombre = 1,
+                Mujer = 2)
+
+df_multiple_unnest <- df_multiple_unnest %>%
+  mutate(sexo = case_when(sexo == 'Hombre' ~ 1L,
+                          sexo == 'Mujer' ~ 2L,
+                          TRUE ~ as.integer(sexo)))
+
+df_multiple_unnest %>%
+  count(sexo)
+
 
 # Reemplazar missings por NA
 df_multiple_unnest <- df_multiple_unnest %>%
-  mutate(across(where(is.numeric), ~ na_if(., 99)))
+  mutate(across(where(is.numeric), ~ na_if(., 9)))
 
-empresa_1 <- empresa %>%
-  filter(!is.na(6))
-
-
-names(df_multiple_unnest)
-
-df_multiple_unnest %>%
-  count(empresa_file,
-        '42.1.- (1) 8) RESPETO A SINDICATOS ¿Los empresarios y/o ejecutivos respetan la libertad de asociación de un empleado a un sindicato y no lo discriminan por afiliarse?')
-
-
-df_multiple_unnest %>%
-  count(P17_4_A_5,
-        '22.1.- (1) Los criterios para definir quienes tienen la posibilidad de hacer teletrabajo y en qué medida, son justos y transparentes')
-
-
-# Base conjunta con respuestas únicas por variable
-df_unica_unnest <- df_data %>%
-  filter(tipo %in% c('unica')) %>%
-  select(empresa_file:data) %>%
-  unnest(data) %>%
-  type.convert() %>%
-  mutate(across(c(any_of(var_strings),
-                  starts_with('CAMPO')),
-                as.character))
-
-# Reemplazar missings por NA
-df_unica_unnest <- df_unica_unnest %>%
-  mutate(across(where(is.numeric), ~ na_if(., 99)))
+head(df_multiple_unnest)
 
 
 # Guardar bases de datos ----
 
 df_multiple_unnest %>%
   saveRDS('data/03-df_multiple_unnest.rds')
-
-df_unica_unnest %>%
-  saveRDS('data/03-df_unica_unnest.rds')
-
