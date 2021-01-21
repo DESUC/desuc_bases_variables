@@ -41,3 +41,13 @@ df_base$data[[1]] %>%
 Y vienen en bases de datos sin etiquetas.
 
 
+## Solución
+
+Crear un diccionario de variables entre esas distintas bases para su posterior unión.
+
+```{r}
+df_dic <- readxl::read_excel('data/02-df_var_long_revisado.xlsx')
+
+df_dic
+```
+
