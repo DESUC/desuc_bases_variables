@@ -338,10 +338,10 @@ $(document).ready(function () {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2021-01-19
+<strong>Last updated:</strong> 2021-01-21
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 1 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>desuc_bases_variables/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -369,36 +369,88 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongaed5597"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> aed5597 </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongEnvironmentstrongempty"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Environment:</strong> empty </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongaed5597" class="panel-collapse collapse">
+<div id="strongEnvironmentstrongempty" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! The global environment was empty. Objects defined in the global environment can affect the analysis in your R Markdown file in unknown ways. For reproduciblity it’s best to always run the code in an empty environment.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSeedstrongcodesetseed20210119code"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Seed:</strong> <code>set.seed(20210119)</code> </a>
+</p>
+</div>
+<div id="strongSeedstrongcodesetseed20210119code" class="panel-collapse collapse">
+<div class="panel-body">
+<p>The command <code>set.seed(20210119)</code> was run prior to running the code in the R Markdown file. Setting a seed ensures that any results that rely on randomness, e.g. subsampling or permutations, are reproducible.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongSessioninformationstrongrecorded"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Session information:</strong> recorded </a>
+</p>
+</div>
+<div id="strongSessioninformationstrongrecorded" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Recording the operating system, R version, and package versions is critical for reproducibility.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongCachestrongnone"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Cache:</strong> none </a>
+</p>
+</div>
+<div id="strongCachestrongnone" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Nice! There were no cached chunks for this analysis, so you can be confident that you successfully produced the results during this run.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongFilepathsstrongrelative"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>File paths:</strong> relative </a>
+</p>
+</div>
+<div id="strongFilepathsstrongrelative" class="panel-collapse collapse">
+<div class="panel-body">
+<p>Great job! Using relative paths to the files within your workflowr project makes it easier to run your code on other machines.</p>
+</div>
+</div>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<p class="panel-title">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomDESUCdesucbasesvariablestree7a3ae60a1beab072912bdb2d5c5976d641da1e68targetblank7a3ae60a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/DESUC/desuc_bases_variables/tree/7a3ae60a1beab072912bdb2d5c5976d641da1e68" target="_blank">7a3ae60</a> </a>
+</p>
+</div>
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomDESUCdesucbasesvariablestree7a3ae60a1beab072912bdb2d5c5976d641da1e68targetblank7a3ae60a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version aed5597. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/DESUC/desuc_bases_variables/tree/7a3ae60a1beab072912bdb2d5c5976d641da1e68" target="_blank">7a3ae60</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 </p>
 <pre><code>
 Ignored files:
+    Ignored:    .DS_Store
+    Ignored:    .Rhistory
     Ignored:    .Rproj.user/
 
-Untracked files:
-    Untracked:  .Rbuildignore
-    Untracked:  LICENSE.md
-    Untracked:  desuc_bases_variables.Rproj
-
 Unstaged changes:
-    Modified:   README.md
-    Modified:   analysis/_site.yml
-    Modified:   analysis/about.Rmd
     Modified:   analysis/index.Rmd
-    Modified:   analysis/license.Rmd
-    Deleted:    myproject.Rproj
 
 </code></pre>
 <p>
@@ -418,7 +470,125 @@ There are no past versions. Publish this analysis with <code>wflow_publish()</co
 </div>
 </div>
 </div>
-<p>Welcome to my research website.</p>
+<pre class="r"><code>suppressPackageStartupMessages(library(tidyverse))</code></pre>
+<div id="manejo-de-bases-y-etiquetas." class="section level1">
+<h1>Manejo de bases y etiquetas.</h1>
+<div id="problema" class="section level2">
+<h2>Problema</h2>
+<p>La entrega de varias bases de datos que deben ser unidas en una sola.</p>
+<pre class="r"><code>df_base &lt;- read_rds(&#39;data/01-df_data.rds&#39;)</code></pre>
+<p>Tres bases distintas:</p>
+<pre class="r"><code>walk(df_base$data, 
+     ~rename_with(.x, ~str_trunc(., width = 50)) %&gt;% 
+       glimpse())</code></pre>
+<pre><code>Rows: 2,018
+Columns: 15
+$ FOLIO                                     &lt;chr&gt; &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6…
+$ SEXO                                      &lt;chr&gt; &quot;Mujer&quot;, &quot;Mujer&quot;, &quot;Hombre&quot;,…
+$ `Tramo edad`                              &lt;chr&gt; &quot;5&quot;, &quot;3&quot;, &quot;5&quot;, &quot;5&quot;, &quot;5&quot;, &quot;5…
+$ `S1.-Eliminar la pobreza 1`               &lt;chr&gt; &quot;9&quot;, &quot;1&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9…
+$ `S1.-Eliminar la pobreza 2`               &lt;chr&gt; &quot;2&quot;, &quot;9&quot;, &quot;2&quot;, &quot;9&quot;, &quot;2&quot;, &quot;2…
+$ `S1.-Eliminar la pobreza 3`               &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;3&quot;, &quot;9&quot;, &quot;9…
+$ `S1.-Eliminar la pobreza 4`               &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9…
+$ `S2.-Ser un país desarrollado 1`          &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9…
+$ `S2.-Ser un país desarrollado 2`          &lt;chr&gt; &quot;9&quot;, &quot;2&quot;, &quot;2&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9…
+$ `S2.-Ser un país desarrollado 3`          &lt;chr&gt; &quot;3&quot;, &quot;9&quot;, &quot;9&quot;, &quot;3&quot;, &quot;3&quot;, &quot;3…
+$ `S2.-Ser un país desarrollado 4`          &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9…
+$ `S3.-Detener el daño al medio ambiente 1` &lt;chr&gt; &quot;9&quot;, &quot;1&quot;, &quot;1&quot;, &quot;9&quot;, &quot;9&quot;, &quot;1…
+$ `S3.-Detener el daño al medio ambiente 2` &lt;chr&gt; &quot;2&quot;, &quot;9&quot;, &quot;9&quot;, &quot;2&quot;, &quot;2&quot;, &quot;9…
+$ `S3.-Detener el daño al medio ambiente 3` &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9…
+$ `S3.-Detener el daño al medio ambiente 4` &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9…
+Rows: 2,011
+Columns: 15
+$ FOLIO_UNICO                             &lt;chr&gt; &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;,…
+$ Sexo                                    &lt;chr&gt; &quot;1&quot;, &quot;2&quot;, &quot;2&quot;, &quot;1&quot;, &quot;2&quot;, &quot;1&quot;,…
+$ Tramo_Edad                              &lt;chr&gt; &quot;5&quot;, &quot;5&quot;, &quot;3&quot;, &quot;1&quot;, &quot;1&quot;, &quot;5&quot;,…
+$ `Eliminar la pobreza (1)`               &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;1&quot;, &quot;1&quot;, &quot;9&quot;, &quot;9&quot;,…
+$ `Eliminar la pobreza (2)`               &lt;chr&gt; &quot;2&quot;, &quot;2&quot;, &quot;9&quot;, &quot;9&quot;, &quot;2&quot;, &quot;2&quot;,…
+$ `Eliminar la pobreza (3)`               &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;,…
+$ `Eliminar la pobreza (4)`               &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;,…
+$ `Ser un país desarrollado (1)`          &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;1&quot;, &quot;9&quot;, &quot;9&quot;,…
+$ `Ser un país desarrollado (2)`          &lt;chr&gt; &quot;9&quot;, &quot;2&quot;, &quot;2&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;,…
+$ `Ser un país desarrollado (3)`          &lt;chr&gt; &quot;3&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;3&quot;, &quot;3&quot;,…
+$ `Ser un país desarrollado (4)`          &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;,…
+$ `Detener el daño al medio ambiente (1)` &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;1&quot;,…
+$ `Detener el daño al medio ambiente (2)` &lt;chr&gt; &quot;2&quot;, &quot;2&quot;, &quot;2&quot;, &quot;2&quot;, &quot;2&quot;, &quot;9&quot;,…
+$ `Detener el daño al medio ambiente (3)` &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;,…
+$ `Detener el daño al medio ambiente (4)` &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;9&quot;,…
+Rows: 2,047
+Columns: 15
+$ `Folio encuesta`                                     &lt;chr&gt; &quot;100101&quot;, &quot;10010…
+$ `Registrar Sexo`                                     &lt;chr&gt; &quot;2&quot;, &quot;2&quot;, &quot;1&quot;, &quot;…
+$ edad_cat                                             &lt;chr&gt; &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;…
+$ `1 - (Eliminar la pobreza) Para comenzar, le voy...` &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;…
+$ `2 - (Eliminar la pobreza) Para comenzar, le voy...` &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;…
+$ `3 - (Eliminar la pobreza) Para comenzar, le voy...` &lt;chr&gt; &quot;9&quot;, &quot;3&quot;, &quot;3&quot;, &quot;…
+$ `4 - (Eliminar la pobreza) Para comenzar, le voy...` &lt;chr&gt; &quot;4&quot;, &quot;9&quot;, &quot;9&quot;, &quot;…
+$ `1 - (Ser un país desarrollado) Para comenzar, l...` &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;…
+$ `2 - (Ser un país desarrollado) Para comenzar, l...` &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;…
+$ `3 - (Ser un país desarrollado) Para comenzar, l...` &lt;chr&gt; &quot;3&quot;, &quot;3&quot;, &quot;3&quot;, &quot;…
+$ `4 - (Ser un país desarrollado) Para comenzar, l...` &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;…
+$ `1 - (Detener el daño al medio ambiente) Para co...` &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;…
+$ `2 - (Detener el daño al medio ambiente) Para co...` &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;2&quot;, &quot;…
+$ `3 - (Detener el daño al medio ambiente) Para co...` &lt;chr&gt; &quot;3&quot;, &quot;3&quot;, &quot;9&quot;, &quot;…
+$ `4 - (Detener el daño al medio ambiente) Para co...` &lt;chr&gt; &quot;9&quot;, &quot;9&quot;, &quot;9&quot;, &quot;…</code></pre>
+<p>Variables registradas por categoría:</p>
+<pre class="r"><code>df_base$data[[1]] %&gt;% 
+  count(across(4:7))</code></pre>
+<pre><code># A tibble: 5 x 5
+  `S1.-Eliminar la … `S1.-Eliminar la… `S1.-Eliminar la… `S1.-Eliminar la…     n
+  &lt;chr&gt;              &lt;chr&gt;             &lt;chr&gt;             &lt;chr&gt;             &lt;int&gt;
+1 1                  9                 9                 9                   323
+2 9                  2                 9                 9                  1145
+3 9                  9                 3                 9                   519
+4 9                  9                 9                 4                    25
+5 9                  9                 9                 9                     6</code></pre>
+<p>Y vienen en bases de datos sin etiquetas.</p>
+<br>
+<p>
+<button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
+<span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Session information
+</button>
+</p>
+<div id="workflowr-sessioninfo" class="collapse">
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>R version 4.0.3 (2020-10-10)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Big Sur 10.16
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
+LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] forcats_0.5.0   stringr_1.4.0   dplyr_1.0.3     purrr_0.3.4    
+ [5] readr_1.4.0     tidyr_1.1.2     tibble_3.0.5    ggplot2_3.3.3  
+ [9] tidyverse_1.3.0 workflowr_1.6.2
+
+loaded via a namespace (and not attached):
+ [1] tidyselect_1.1.0  xfun_0.20         haven_2.3.1       colorspace_2.0-0 
+ [5] vctrs_0.3.6       generics_0.1.0    htmltools_0.5.1   yaml_2.2.1       
+ [9] utf8_1.1.4        rlang_0.4.10      later_1.1.0.1     pillar_1.4.7     
+[13] withr_2.4.0       glue_1.4.2        DBI_1.1.1         dbplyr_2.0.0     
+[17] modelr_0.1.8      readxl_1.3.1      lifecycle_0.2.0   munsell_0.5.0    
+[21] gtable_0.3.0      cellranger_1.1.0  rvest_0.3.6       evaluate_0.14    
+[25] knitr_1.30        httpuv_1.5.5      fansi_0.4.2       broom_0.7.3      
+[29] Rcpp_1.0.6        promises_1.1.1    backports_1.2.1   scales_1.1.1     
+[33] jsonlite_1.7.2    fs_1.5.0          hms_1.0.0         digest_0.6.27    
+[37] stringi_1.5.3     rprojroot_2.0.2   grid_4.0.3        cli_2.2.0        
+[41] tools_4.0.3       magrittr_2.0.1    crayon_1.3.4      pkgconfig_2.0.3  
+[45] ellipsis_0.3.1    xml2_1.3.2        reprex_0.3.0      lubridate_1.7.9.2
+[49] assertthat_0.2.1  rmarkdown_2.6     httr_1.4.2        rstudioapi_0.13  
+[53] R6_2.5.0          git2r_0.28.0      compiler_4.0.3   </code></pre>
+</div>
+</div>
+</div>
 
 
 <!-- Adjust MathJax settings so that all math formulae are shown using

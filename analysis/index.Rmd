@@ -8,4 +8,36 @@ editor_options:
   chunk_output_type: console
 ---
 
-Welcome to my research website.
+```{r setup}
+suppressPackageStartupMessages(library(tidyverse))
+```
+
+
+# Manejo de bases y etiquetas.
+
+## Problema
+
+La entrega de varias bases de datos que deben ser unidas en una sola.
+
+```{r}
+df_base <- read_rds('data/01-df_data.rds')
+```
+
+Tres bases distintas:
+
+```{r}
+walk(df_base$data, 
+     ~rename_with(.x, ~str_trunc(., width = 50)) %>% 
+       glimpse())
+```
+
+Variables registradas por categoría:
+
+```{r}
+df_base$data[[1]] %>% 
+  count(across(4:7))
+```
+
+Y vienen en bases de datos sin etiquetas.
+
+
