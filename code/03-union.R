@@ -61,6 +61,7 @@ df_data <- df_data %>%
   dplyr::mutate(var_rename = list(label_vector(df_var_long,
                                                var_select = all_of(var_codes))))
 
+df_data$var_rename[[1]]
 
 # Hago el cambio de nombre gracias al vector nominado agregado en la etapa anterior.
 df_data <- df_data %>%
