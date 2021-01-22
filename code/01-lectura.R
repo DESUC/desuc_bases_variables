@@ -32,7 +32,7 @@ f_read_file <- function(path) {
   # Lectura de base de datos separada por tab.
 
   df <- read_csv2(path,
-                  skip = 4,
+                  skip = 4, #salto de filas vacias
                   locale = locale(encoding = 'UTF-8'),
                   col_types = cols(.default = 'c'),
                   progress = FALSE)
